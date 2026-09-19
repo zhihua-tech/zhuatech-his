@@ -4,10 +4,22 @@ package cn.zhuatech.his.domain;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Component
 public class DomainCatalog {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String systemName() { return "知华 HIS 医院运营协同平台"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String sceneName() { return "门诊、住院、床位与护理运营"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<SeedItem> seedItems() {
         return List.of(
             new SeedItem("HIS-20260801-001", "急诊留观床位协调", "处理中", "急诊协调组", "紧急"),
@@ -16,9 +28,15 @@ public class DomainCatalog {
             new SeedItem("HIS-20260801-004", "重点患者检查路径跟进", "处理中", "医务协同组", "高")
         );
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<String> recommendedActions() {
         return List.of("优先协调急诊与住院床位资源", "复核超时诊疗节点并通知责任组", "关注关键患者路径的数据完整性");
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record SeedItem(String recordNo, String title, String status, String owner, String priority) {}
 }
 

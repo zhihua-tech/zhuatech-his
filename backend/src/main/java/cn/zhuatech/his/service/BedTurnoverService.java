@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BedTurnoverService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public TurnoverResult evaluate(TurnoverRequest request) {
         int readyBeds = Math.max(0, Math.min(request.dischargedBeds(), request.cleaningCompleted())
             - request.isolationBeds());
@@ -28,12 +34,18 @@ public class BedTurnoverService {
         return new TurnoverResult(readyBeds, shortage, pressureScore, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record TurnoverRequest(@NotNull @Min(0) @Max(10000) Integer dischargedBeds,
         @NotNull @Min(0) @Max(10000) Integer cleaningCompleted,
         @NotNull @Min(0) @Max(10000) Integer isolationBeds,
         @NotNull @Min(0) @Max(10000) Integer incomingPatients,
         @NotNull @Min(0) @Max(1440) Integer averageCleaningMinutes,
         @NotNull @Positive Integer staffedBeds) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record TurnoverResult(int readyBeds, int shortage, int pressureScore,
         String status, List<String> actions) {}
 }
